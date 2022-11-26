@@ -1,36 +1,69 @@
-function areaQuadrada(lado) {
-  return lado * lado;
+// Crie uma função para verificar se um valor é Truthy
+function acessoNome(nome) {
+  return !!nome;
 }
-console.log(areaQuadrada(2));
+console.log(acessoNome(" "));
 
-function pi() {
-  return 3.14;
+// Crie uma função matemática que retorne o perímetro de um quadrado
+// lembrando: perímetro é a soma dos quatro lados do quadrado
+
+function perimetro(lado) {
+  return lado * 4;
 }
+var soma = perimetro(8);
 
-var total = 5 * pi();
-console.log(total);
+console.log(soma);
 
-function imc(peso, altura) {
-  var imc = peso / (altura * altura);
-  return imc;
+// Crie uma função que retorne o seu nome completo
+// ela deve possuir os parâmetros: nome e sobrenome
+
+function nomeCompleto(nome, sobrenome) {
+  return nome + " " + sobrenome; // `${nome} ${sobrenome}`
 }
-console.log(imc(83, 1.83));
+var nome = "Sandro";
+var sobrenome = "Júnior";
 
-function corFavorita(cor) {
-  if (cor === "azul") {
-    return "Eu gosto do céu";
-  } else if (cor === "verde") {
-    return "Eu gosto de floresta";
-  } else if (cor === "amarelo") {
-    return "Eu gosto do sol";
+console.log(nomeCompleto(nome, sobrenome));
+
+// Crie uma função que verifica se um número é par
+function isEven(numero) {
+  var modulo = numero % 2;
+  if (modulo === 0) {
+    return true;
   } else {
-    return "Eu não tenho cor favorita";
+    return false;
   }
 }
-console.log(corFavorita("verde"));
+console.log(isEven(2));
 
-function mostraConsole() {
-  console.log("Clicou");
+// Crie uma função que retorne o tipo de
+// dado do argumento passado nela (typeof)
+function tipoDeValor(valor) {
+  return typeof valor;
 }
 
-addEventListener("click", mostraConsole);
+var tipo = tipoDeValor("");
+
+console.log(tipo);
+
+// addEventListener é uma função nativa do JavaScript
+// o primeiro parâmetro é o evento que ocorre e o segundo o Callback
+// utilize essa função para mostrar no console o seu nome completo
+// quando o evento 'click' ocorrer.
+
+addEventListener("click", function mostraNome() {
+  var nome1 = nomeCompleto(nome, sobrenome);
+  console.log(nome1);
+});
+
+// Corrija o erro abaixo
+var totalPaises = 193;
+function precisoVisitar(paisesVisitados) {
+  return `Ainda faltam ${totalPaises - paisesVisitados} países para visitar`;
+}
+function jaVisitei(paisesVisitados) {
+  return `Já visitei ${paisesVisitados} do total de ${totalPaises} países`;
+}
+
+console.log(precisoVisitar(20));
+console.log(jaVisitei(20));
