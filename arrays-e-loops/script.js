@@ -2,8 +2,6 @@
 // 1959, 1962, 1970, 1994, 2002
 var anosDaCopa = [1959, 1962, 1970, 1994, 2002];
 
-console.log(anosDaCopa[0]);
-
 // Interaja com a array utilizando um loop, para mostrar
 // no console a seguinte mensagem, `O brasil ganhou a copa de ${ano}`
 
